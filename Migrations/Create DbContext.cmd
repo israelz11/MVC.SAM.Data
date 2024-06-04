@@ -1,0 +1,4 @@
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=SAM_APPS;User ID=siamdev; Password=4yunt4m1ent00807!;" Microsoft.EntityFrameworkCore.SqlServer -o Entities/App/ -c "DefaultContext" --project MVC.SAM.Data --startup-project ConsoleApp
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=SIENCHAFA;User ID=siamdev; Password=4yunt4m1ent00807!;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c "SienConnection" --project MVC.AVP --startup-project MVC.AVP --force
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=SAM_APPS;User ID=siamdev; Password=4yunt4m1ent00807!;" Microsoft.EntityFrameworkCore.SqlServer -o Entities/App/ -c "DefaultContext" --project MVC.Data --startup-project MVC.Data --force
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=APEM;User ID=siamdev; Password=4yunt4m1ent00807!;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c "DefaultContext" --project MVC.APEM --startup-project MVC.APEM --force

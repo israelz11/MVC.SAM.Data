@@ -1,0 +1,42 @@
+//Para Desarrollo
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            IConfigurationRoot configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile(path, optional: false)
+                 .Build();
+
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DevAppConnection"));
+            }
+        }
+
+        //Para Produccion
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            IConfigurationRoot configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile(path, optional: false)
+                 .Build();
+
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("SienConnection"));
+            }
+        }
+
+
+//MVC.PPE
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            IConfigurationRoot configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile(path, optional: false)
+                 .Build();
+
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("APEMConnection"));
+            }
+        }
